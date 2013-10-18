@@ -1,0 +1,14 @@
+Торговый зал:<%= @tool.traderoom.name %>
+<table>
+    <thead>
+        <tr><th>Инструмент</th></tr> 
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+            <%= "#{@tool.name} (#{@tool.symbol})" %>
+            <%= image_tag @tool.avatar.thumb.url.to_s %>
+            </td>
+        </tr>        
+    </tbody>
+</table>

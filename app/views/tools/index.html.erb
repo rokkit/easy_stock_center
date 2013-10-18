@@ -1,0 +1,32 @@
+<%= link_to "Добавить инструмент", new_tool_path %>
+<table>
+    <thead>
+        <tr>
+            <th>Инструмент</th>
+            <th>Торговый зал</th>
+            <th></th>
+            <th></th>
+        </tr> 
+    </thead>
+    <tbody>
+        <% @tools.each do |tool| %>
+        <tr>
+            <td>
+            <%= link_to tool.name, tool %>
+            <%= image_tag tool.avatar.thumb.url.to_s %>
+            </td>
+
+            <td>
+                <%= link_to tool.traderoom.name, tool.traderoom %>
+                
+            </td>
+            <td>
+                <%= link_to "Редактировать", edit_tool_path(tool) %>
+            </td>
+            <td>
+                <%= link_to 'Удалить', tool, method: :delete, data: { confirm: 'Подтвердить удаление?' } %>
+            </td>
+        </tr>        
+        <% end %>
+    </tbody>
+</table>

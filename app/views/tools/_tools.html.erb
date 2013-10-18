@@ -1,0 +1,15 @@
+<table>
+    <thead>
+        <tr><th>Инструмент</th></tr> 
+    </thead>
+    <tbody>
+        <% @traderoom.tools.each do |tool| %>
+        <tr>
+            <td>
+            <%= tool.name %>
+            <%= image_tag tool.avatar.thumb.url.to_s %>
+            </td>
+        </tr>        
+        <% end %>
+    </tbody>
+</table>

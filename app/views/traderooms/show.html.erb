@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Торговый зал:</strong>
+  <%= @traderoom.name %>
+</p>
+
+<%= render 'tools/tools' %>    
+
+<%= link_to 'Edit', edit_traderoom_path(@traderoom) %> |
+<%= link_to 'Back', traderooms_path %>
