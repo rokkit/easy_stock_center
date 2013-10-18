@@ -29,7 +29,7 @@ group :development do
   
 end
 
-gem :production do
+group :production do
   gem 'mysql'
 end
 group :test do
