@@ -11,7 +11,7 @@ SimpleNavigation::Configuration.run do |navigation|
 
   # Specify the class that will be applied to the current leaf of
   # active navigation items. Defaults to 'simple-navigation-active-leaf'
-  # navigation.active_leaf_class = 'your_active_leaf_class'
+  navigation.active_leaf_class = 'active'
 
   # Item keys are normally added to list items as id.
   # This setting turns that off
@@ -20,7 +20,7 @@ SimpleNavigation::Configuration.run do |navigation|
   # You can override the default logic that is used to autogenerate the item ids.
   # To do this, define a Proc which takes the key of the current item as argument.
   # The example below would add a prefix to each key.
-  # navigation.id_generator = Proc.new {|key| "my-prefix-#{key}"}
+  navigation.id_generator = Proc.new {|key| "mid-#{key}"}
 
   # If you need to add custom html around item names, you can define a proc that will be called with the name you pass in to the navigation.
   # The example below shows how to wrap items spans.
@@ -49,28 +49,13 @@ SimpleNavigation::Configuration.run do |navigation|
     #                            when the item should be highlighted, you can set a regexp which is matched
     #                            against the current URI.  You may also use a proc, or the symbol <tt>:subpath</tt>. 
     #
-    primary.item :root, 'Easy Stock Center', root_path, class: 'brand'
-    if user_signed_in?
-      primary.item :logout, 'Выход', destroy_user_session_path, :method=>'delete'
-    else
-      primary.item :signin,'Вход', new_user_session_path
-    end
-    if user_signed_in?
-      if current_user.has_role? :admin
-        primary.item :admin, 'Администрирование', users_path do |admin_nav|
-          admin_nav.item :users, 'Пользователи', users_path
-          admin_nav.item :traderooms, 'Торговые залы', traderooms_path
-          admin_nav.item :tools, 'Инструменты', tools_path
-        end
-      end
-    else
-      primary.item :signup, 'Регистрация', new_user_registration_path
-    end
+    primary.item :page_1, 'Page 1', tools_path
+
     # Add an item which has a sub navigation (same params, but with block)
-    # primary.item :key_2, 'name', url, options do |sub_nav|
-    #   # Add an item to the sub navigation (same params again)
-    #   sub_nav.item :key_2_1, 'name', url, options
-    # end
+    primary.item :page_2, 'Page 2', tools_path, class: "has-dropdown" do |sub_nav|
+      sub_nav.dom_class = 'dropdown'
+      sub_nav.item :key_2_1, 'name', tools_path
+    end
 
     # You can also specify a condition-proc that needs to be fullfilled to display an item.
     # Conditions are part of the options. They are evaluated in the context of the views,
@@ -81,7 +66,7 @@ SimpleNavigation::Configuration.run do |navigation|
     # you can also specify a css id or class to attach to this particular level
     # works for all levels of the menu
     # primary.dom_id = 'menu-id'
-    primary.dom_class = 'nav'
+    primary.dom_class = 'left'
 
     # You can turn off auto highlighting for a specific level
     # primary.auto_highlight = false

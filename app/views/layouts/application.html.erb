@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <title><%= content_for?(:title) ? yield(:title) : "Easy Stock Center" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Easy Stock Center" %>">
     <%= stylesheet_link_tag "application", :media => "all" %>
@@ -11,14 +11,40 @@
   </head>
   <body class="<%= controller_name %> <%= action_name %>">
     <div id="container" class="container">
-      <header>
-        <%= render 'layouts/navigation' %>
+      <nav class="top-bar" id="main-menu">
+        <ul class="title-area">
+          <!-- Title Area -->
+          <li class="name">
+            <h1><a href="#">Easy Stock Center</a></h1>
+          </li>
+          <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
+
+        <section class="top-bar-section">
+          <!-- Left Nav Section -->
+          <%= render_navigation context: :primary %>
+
+          <!-- Right Nav Section -->
+          <%= render_navigation context: :user %>
+        </section>
+      </nav>
+      
+      <div id="messages">
         <%= render 'layouts/messages' %>
+      </div>
+
+      <header id="top-header">
+        <%= render 'layouts/header' %>
       </header>
-      <div id="main" role="main">
-        <%= yield %>
+
+      <div id="main" role="main" class="row">
+        <div class="small-12 large-12 columns">
+          <%= yield %>
+        </div>
       </div>
       <footer>
+        <%= render 'layouts/footer' %>
       </footer>
     </div> <!--! end of #container -->
   </body>
