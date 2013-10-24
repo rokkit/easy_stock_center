@@ -15,6 +15,7 @@
 
 // Colours
 $orange: #F36F2A;
+$blue: #2859A8;
 
 // HEADER
 #top-header {
@@ -63,6 +64,29 @@ $orange: #F36F2A;
 }
 
 // MAIN
+
+// NEWS
+
+// Front pane
+#news-block {
+	.content {
+		overflow: hidden;
+	}
+	.pane {
+		float: left;
+	}
+	.news-1 {
+		width: 20%;
+	}
+	.news-2, .news-3 {
+		width: 40%;
+	}
+	
+	.block-title {
+		color: $blue;
+		font-size: em-calc(17px);
+	}
+}
 
 // FOOTER
 footer {
