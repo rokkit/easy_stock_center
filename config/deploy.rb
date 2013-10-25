@@ -35,14 +35,7 @@ set :default_environment, {
   'RBENV_ROOT' => "$HOME/.rbenv/",
   'PATH' => "$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH"
 }
-desc "Fix permission"
-task :fix_permissions, :roles => [ :app, :db, :web ] do
-  run "#{try_sudo} chmod 777 -R #{current_path}/log"
-  run "#{try_sudo} chmod 777 -R #{current_path}/tmp"
-  run "#{try_sudo} chmod 777 -R #{current_path}/public"
-end
 
-after "deploy:update_code", :fix_permissions
 after :deploy do
   run "#{try_sudo} chmod 777 -R #{current_path}/log"
   run "#{try_sudo} chmod 777 -R #{current_path}/tmp"
