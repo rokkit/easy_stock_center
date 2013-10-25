@@ -69,23 +69,32 @@ $blue: #2859A8;
 
 // Front pane
 #news-block {
-	.content {
-		overflow: hidden;
-	}
-	.pane {
-		float: left;
-	}
-	.news-1 {
-		width: 20%;
-	}
-	.news-2, .news-3 {
-		width: 40%;
-	}
-	
-	.block-title {
-		color: $blue;
-		font-size: em-calc(17px);
-	}
+  section {
+    &.active {
+      .title,
+      .content {
+        background-color: #FCC5CB;
+      }
+    }
+    .content {
+      overflow: hidden;
+    }
+    .pane {
+      float: left;
+    }
+    .news-1 {
+      width: 20%;
+    }
+    .news-2, .news-3 {
+      width: 40%;
+    }
+    
+    .block-title {
+      color: $blue;
+      font-size: 1.3em;
+      font-weight: 300;
+    }
+  }
 }
 
 // FOOTER
