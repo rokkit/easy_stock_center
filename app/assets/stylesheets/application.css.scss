@@ -94,6 +94,15 @@ $blue: #2859A8;
       font-size: 1.3em;
       font-weight: 300;
     }
+
+    .latest-news {
+      dl {
+        dt {
+          float: left;
+          width: 38px;
+        }
+      }
+    }
   }
 }
 

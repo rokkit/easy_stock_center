@@ -1,14 +1,65 @@
-Торговый зал:<%= @tool.traderoom.name %>
+<h4>Торговый зал:<%= @tool.traderoom.name %></h4>
+
 <table>
     <thead>
-        <tr><th>Инструмент</th></tr> 
+        <tr>
+            <th>Инструмент</th>
+            <th>Пос. сделка</th>
+            <th>% Изм. цены</th>
+            <th>Спрос</th>
+            <th>Предл.</th>
+            <th>Открытие</th>
+            <th>Макс.</th>
+            <th>Мин.</th>
+            <th>Закрытие</th>
+            <th>Объем</th>
+            <th>Время обм.</th>
+            <th class="action">Ставка на 30 мин.</th>
+            <th class="action">Ставка на 10 мин.</th>
+            <th class="action">Ставка на 5 мин.</th>
+            <th class="action">Сделанные ставки</th>
+        </tr> 
     </thead>
     <tbody>
         <tr>
             <td>
-            <%= "#{@tool.name} (#{@tool.symbol})" %>
-            <%= image_tag @tool.avatar.thumb.url.to_s %>
+                <%= image_tag @tool.avatar.thumb.url.to_s, :alt => @tool.name %><br>
+                <%= "(#{@tool.symbol})" %>
             </td>
-        </tr>        
+            <td>
+                1.1234
+            </td>
+            <td>
+                <span class="positive">+ 0.0370%</span>
+            </td>
+            <td>
+                1.3534
+            </td>
+            <td>
+                1.4121
+            </td>
+            <td>
+                1.3124
+            </td>
+            <td>
+                1.5362
+            </td>
+            <td>
+                1.8468
+            </td>
+            <td>
+                1.8436
+            </td>
+            <td>
+                --
+            </td>
+            <td>
+                15:45:40 20:09
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
     </tbody>
 </table>
