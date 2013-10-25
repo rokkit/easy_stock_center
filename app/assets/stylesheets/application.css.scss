@@ -97,10 +97,26 @@ $blue: #2859A8;
 
     .latest-news {
       dl {
+        font-size: .8em;
         dt {
           float: left;
-          width: 38px;
+          width: 2.7em;
+          color: #5A151C;
+          font-weight: 300;
         }
+        dt, dd {
+          margin-bottom: .25em;
+        }
+      }
+    }
+
+    .top-news {
+      h3,
+      p {
+        margin-bottom: 0;
+      }
+      h3 {
+        font-size: 1.2em;
       }
     }
   }
