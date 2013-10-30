@@ -6,6 +6,7 @@ class BetsController < ApplicationController
   def create
     @bet = Bet.new bet_params
     @bet.user = current_user
+    @bet.status = Bet::STATUS[:open]
     if @bet.save
       flash[:notice] = 'Ставка успешно сделана'
     end

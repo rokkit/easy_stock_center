@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131030102851) do
+ActiveRecord::Schema.define(version: 20131030121132) do
 
   create_table "bets", force: true do |t|
     t.integer  "user_id"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20131030102851) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "tool_id"
+    t.integer  "status"
   end
 
   add_index "bets", ["user_id"], name: "index_bets_on_user_id"
