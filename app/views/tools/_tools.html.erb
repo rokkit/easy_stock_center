@@ -22,7 +22,7 @@
         <% @traderoom.tools.each do |tool| %>
         <tr>
             <td>
-                <%= tool.name %>
+                <%= link_to tool.name, tool %>
                 <%= image_tag tool.avatar.thumb.url.to_s %>
             </td>
             <td>

@@ -2,3 +2,4 @@
 <p>User: <%= @user.name %></p>
 <p>Email: <%= @user.email if @user.email %></p>
 <p>На счету: <%= humanized_money_with_symbol @user.money_total %></p>
+<p>В ставках: <%= humanized_money_with_symbol @user.money_in_bets %></p>
