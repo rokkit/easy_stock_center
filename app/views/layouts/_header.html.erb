@@ -78,8 +78,10 @@
           <div class="pane news-3 top-news">
             <h2 class="block-title">Новость дня</h2>
             <h3><a href="#"><%= @feed_yahoo.entries.first.title %></a></h3>
-            <%= image_tag @feed_yahoo.entries.first.image %>
-            <p><%= strip_tags @feed_yahoo.entries.first.summary.sanitize %></p>
+            <p>
+              <%= image_tag @feed_yahoo.entries.first.image, class: 'news-image' %>
+              <%= strip_tags @feed_yahoo.entries.first.summary.sanitize %>
+            </p>
           </div>
         </div>
       </section>
