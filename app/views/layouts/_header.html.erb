@@ -68,20 +68,17 @@
           <div class="pane news-2 latest-news">
             <h2 class="block-title">Последние новости</h2>
             <dl>
-              <dt>7:45</dt>
-              <dd>Заголовок 1</dd>
-              <dt>7:25</dt>
-              <dd>Заголовок 2</dd>
-              <dt>7:00</dt>
-              <dd>Заголовок 3</dd>
-              <dt>6:50</dt>
-              <dd>Заголовок 4</dd>
+              <% @feed_yahoo = get_feed("http://finance.yahoo.com/news/?format=rss") %>
+              <% @feed_yahoo.entries[1..5].each do |news| %>
+                  <dt><%= news.published.strftime("%R") %></dt>
+                  <dd><%= news.title %></dd>
+              <% end %>
             </dl>
           </div>
           <div class="pane news-3 top-news">
             <h2 class="block-title">Новость дня</h2>
-            <h3><a href="#">Some text</a></h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, rerum, facilis, impedit, laboriosam aliquam repellendus maiores</p>
+            <h3><a href="#"><%= @feed_yahoo.entries.first.title %></a></h3>
+            <p><%= strip_tags @feed_yahoo.entries.first.summary.sanitize %></p>
           </div>
         </div>
       </section>
