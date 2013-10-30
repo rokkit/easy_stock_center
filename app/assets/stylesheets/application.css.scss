@@ -13,9 +13,20 @@
  *= require_tree .
 */
 
+@import "compass/css3";
+
 // Colours
 $orange: #F36F2A;
 $blue: #2859A8;
+$light-gray: #DDDDDD;
+
+// Fonts
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+
+// entypo */
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
 
 // HEADER
 #top-header {
@@ -60,6 +71,35 @@ $blue: #2859A8;
   .site-slogan {
     font-size: 1em;
     font-weight: 300;
+  }
+}
+
+// account status
+#account-status {
+  width: 160px;
+  border: 1px solid $light-gray;
+  overflow: hidden;
+  @include background-image(linear-gradient(lighten($light-gray, 10%), lighten($light-gray, 5%)));
+  .entypo-briefcase {
+    padding: 15px;
+    font-size: 1.3em;
+    border-right: 1px solid $light-gray;
+    float: left;
+  }
+  .data {
+    float: left;
+    text-align: right;
+    width: 100px;
+    padding: 5px;
+    p {
+      margin: 0;
+      &.money {
+
+      }
+      &.stat {
+        font-size: .8em;
+      }
+    }
   }
 }
 
@@ -153,6 +193,15 @@ footer {
 }
 
 // MISC
+
+// bets
+.positive {
+  color: #2C9356;
+}
+.negative {
+  color: #F94757;
+}
+
 div {
   &.field, &.actions {
     margin-bottom: 10px;

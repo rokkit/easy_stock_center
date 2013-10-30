@@ -11,7 +11,7 @@
   </head>
   <body class="<%= controller_name %> <%= action_name %>">
     <div id="container" class="container">
-      <nav class="top-bar" id="main-menu">
+      <nav class="top-bar" id="top-menu" data-options="is_hover:false">
         <ul class="title-area">
           <!-- Title Area -->
           <li class="name">
@@ -36,6 +36,33 @@
 
       <header id="top-header">
         <%= render 'layouts/header' %>
+      
+        <div class="row">
+          <div class="small-12 columns">
+            <nav class="top-bar contain-to-grid" id="main-menu" data-options="is_hover:false">
+              <ul class="title-area">
+                <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+                <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+              </ul>
+
+              <section class="top-bar-section">
+                <!-- Left Nav Section -->
+                <%= render_navigation context: :primary %>
+
+                <!-- Right Nav Section -->
+                <%= render_navigation context: :user %>
+              </section>
+            </nav>
+
+            <div id="account-status">
+              <div class="entypo-briefcase">&nbsp;</div>
+              <div class="data">
+                <p class="money">30000 Р.</p>
+                <p class="stat"><span class="positive">+0,30</span> | <span class="negative">-0,02</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
       </header>
 
       <div id="main" role="main" class="row">

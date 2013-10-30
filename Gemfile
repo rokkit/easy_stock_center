@@ -23,6 +23,7 @@ gem 'capistrano'
 gem 'money-rails'
 gem 'feedzirra'
 gem 'comfortable_mexican_sofa', '~> 1.10.0'
+gem 'tinymce-rails'
 
 group :development do
   gem 'better_errors'
