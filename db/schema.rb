@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131030085555) do
+ActiveRecord::Schema.define(version: 20131030102851) do
+
+  create_table "bets", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "time",                            null: false
+    t.integer  "quote_start",                     null: false
+    t.integer  "quote_final",                     null: false
+    t.integer  "amount_cents",    default: 0,     null: false
+    t.string   "amount_currency", default: "USD", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "tool_id"
+  end
+
+  add_index "bets", ["user_id"], name: "index_bets_on_user_id"
 
   create_table "cms_blocks", force: true do |t|
     t.integer  "page_id",                     null: false

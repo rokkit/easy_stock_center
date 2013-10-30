@@ -2,10 +2,14 @@ EasyStockCenter::Application.routes.draw do
 
 
 
+  resources :bets
+
   resources :tools, only: [:index, :new, :create]
 
   resources :traderooms, shallow: true do
-    resources :tools
+    resources :tools do
+      resources :bets
+    end
   end
 
   root :to => "home#index"

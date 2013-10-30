@@ -1,9 +1,8 @@
 class Tool < ActiveRecord::Base
   belongs_to :traderoom
+  has_many :bets, dependent: :destroy
   
-  validates :name,:symbol, presence: true
+  validates :name, :symbol, presence: true
   mount_uploader :avatar, AvatarUploader
   
-  def quote
-  end
 end

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 
+  time: 1
+  quote_start: 1
+  quote_final: 1
+  amount: 
+
+two:
+  user_id: 
+  time: 1
+  quote_start: 1
+  quote_final: 1
+  amount: 

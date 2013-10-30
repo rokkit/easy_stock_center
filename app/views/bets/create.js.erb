@@ -1,0 +1,15 @@
+
+<% if @bet.errors.any? -%>
+  /*Hide the flash notice div*/
+  $("#messages").hide(300);
+
+  /*Update the html of the div post_errors with the new one*/
+  $("#messages").html("<%= escape_javascript(@bet.errors.full_messages.first)%>");
+
+  /*Show the div post_errors*/
+  $("#messages").show(300);
+<% else -%>
+console.log("bet created");
+   /*Update the html of the div flash_notice with the new one*/
+  $("#messages").html("<div id='flash_notice'><%= escape_javascript(flash[:notice])%></div>");
+<% end -%>
