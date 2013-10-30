@@ -13,9 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-//= require turbolinks
-//= require rssreader
-//= require comfortable_mexican_sofa/admin/application
 //= require_tree .
 
 $(function(){ $(document).foundation(); });

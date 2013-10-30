@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   rolify
+  
   monetize :money_total_cents
   
   has_many :bets

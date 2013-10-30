@@ -60,7 +60,7 @@
   <div class="small-12 columns">
     <div id="news-block" class="section-container auto" data-section>
       <section class="active">
-        <p class="title" data-section-title><a href="#panel1">Lenta.ru</a></p>
+        <p class="title" data-section-title><a href="#panel1">Yahoo.finance</a></p>
         <div class="content" data-section-content>
           <div class="pane news-1">
             <p>Some text</p>
@@ -77,10 +77,10 @@
           </div>
           <div class="pane news-3 top-news">
             <h2 class="block-title">Новость дня</h2>
-            <h3><a href="#"><%= @feed_yahoo.entries.first.title %></a></h3>
+            <h3><a href="<%= @feed_yahoo.entries.first.url %>"><%= @feed_yahoo.entries.first.title %></a></h3>
             <p>
               <%= image_tag @feed_yahoo.entries.first.image, class: 'news-image' %>
-              <%= strip_tags @feed_yahoo.entries.first.summary.sanitize %>
+              <%=  strip_tags(@feed_yahoo.entries.first.summary.sanitize).html_safe %>
             </p>
           </div>
         </div>

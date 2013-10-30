@@ -20,7 +20,7 @@ test:
 
 production:
   adapter: mysql2
-  database: simple_stock_center_production
+  database: easy_stock_center_production
   pool: 5
   timeout: 5000
   encoding: utf8

@@ -12,9 +12,7 @@
             <th>Закрытие</th>
             <th>Объем</th>
             <th>Время обм.</th>
-            <th>Ставка на 30 мин.</th>
-            <th>Ставка на 10 мин.</th>
-            <th>Ставка на 5 мин.</th>
+            <th>Открыть</th>
             <th>Сделанные ставки</th>
         </tr> 
     </thead>
@@ -55,10 +53,8 @@
             <td>
                 15:45:40 20:09
             </td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td><%= link_to "Перейти", tool %></td>
+            <td><%= render partial: 'bets/bet', locals: { bet: tool.actual_bets_for(current_user) } %></td>
         </tr>        
         <% end %>
     </tbody>
