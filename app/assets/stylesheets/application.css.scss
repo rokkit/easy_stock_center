@@ -65,6 +65,10 @@ $blue: #2859A8;
 
 // MAIN
 
+#main {
+  margin-bottom: 2em;
+}
+
 // NEWS
 
 // Front pane
@@ -94,7 +98,7 @@ $blue: #2859A8;
       font-size: 1.3em;
       font-weight: 300;
     }
-
+  
     .latest-news {
       dl {
         font-size: .8em;
@@ -115,6 +119,11 @@ $blue: #2859A8;
       p {
         margin-bottom: 0;
       }
+      .news-image {
+        display: block;
+        float: left;
+        margin: 0 1em 1em 0;
+      }
       h3 {
         font-size: 1.2em;
       }
@@ -124,6 +133,7 @@ $blue: #2859A8;
 
 // FOOTER
 footer {
+  padding: 4em;
   border-top: 4px solid #222;
   background-color: #eee;
 }
@@ -140,6 +150,46 @@ footer {
 #flash_alert {
   background-color: #FCC;
   border: solid 1px #C66;
+}
+
+// MISC
+div {
+  &.field, &.actions {
+    margin-bottom: 10px;
+  }
+}
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff;
+  }
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
 }
 
 
