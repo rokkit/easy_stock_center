@@ -50,11 +50,7 @@ SimpleNavigation::Configuration.run do |navigation|
     #                            against the current URI.  You may also use a proc, or the symbol <tt>:subpath</tt>. 
     #
     # primary.item :root, 'Easy Stock Center', root_path, class: 'brand'
-    if user_signed_in?
-      primary.item :logout, 'Выход', destroy_user_session_path, :method=>'delete'
-    else
-      primary.item :signin,'Вход', new_user_session_path
-    end
+
     if user_signed_in?
       if current_user.has_role? :admin
         primary.item :admin, 'Администрирование', users_path, class: "has-dropdown" do |admin_nav|
@@ -65,7 +61,13 @@ SimpleNavigation::Configuration.run do |navigation|
         end
       end
     else
+      
       primary.item :signup, 'Регистрация', new_user_registration_path
+    end
+    if user_signed_in?
+      primary.item :logout, 'Выход', destroy_user_session_path, :method=>'delete'
+    else
+      primary.item :signin,'Вход', new_user_session_path
     end
     # Add an item which has a sub navigation (same params, but with block)
     # primary.item :key_2, 'name', url, options do |sub_nav|
